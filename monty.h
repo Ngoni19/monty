@@ -68,8 +68,6 @@ int add_end_node(stack_t **h, int n);
 void free_dlist(stack_t **h);
 void delete_end_node(stack_t **h);
 
-void get_free(stack_t *stack);
-int is_number(const char *n);
 
 #endif
 
