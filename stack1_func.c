@@ -34,6 +34,12 @@ void pop(stack_t **h, unsigned int line_number)
 	else
 		delete_end_node(h);
 }
+/**
+ * push - add data at node
+ * @h: head of linked list
+ * @line_number: bytecode line number
+ * @n: pointer to char to be added
+ */
 void push(stack_t **h, unsigned int line_number, const char *n)
 {
 	if (!h)
