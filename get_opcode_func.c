@@ -32,5 +32,8 @@ void (*get_op_fun(char *token1))(stack_t **stack, unsigned int line_number)
 			return (instruction_s[k].f);
 		k++;
 	}
-	return (NULL);
+	fprintf(stderr, "L%u: unknown instruction %s\n", l, token1);
+	fclose(file);
+	get_free(*stak);
+	exit(EXIT_FAILURE);
 }
