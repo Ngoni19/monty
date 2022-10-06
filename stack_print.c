@@ -20,6 +20,16 @@ void pall(stack_t **h, unsigned int line_number)
 	}
 }
 /**
+ * nop - do nothing at all function
+ * @h: head of list
+ * @line_number: bytecode line number
+ */
+void nop(stack_t **h, unsigned int line_number)
+{
+	(void) h;
+	(void) line_number;
+}
+/**
  * pint - print top node in stack
  * @h: head of list
  * @line_number: bytecode line number
@@ -78,14 +88,4 @@ void pstr(stack_t **h, unsigned int line_number)
 		temp = temp->next;
 	}
 	printf("\n");
-}
-/**
- * nop - do nothing at all
- * @h: head of list
- * @line_number: bytecode line number
- */
-void nop(stack_t **h, unsigned int line_number)
-{
-	(void) h;
-	(void) line_number;
 }

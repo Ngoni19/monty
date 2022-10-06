@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * swap - location of prev stack with the top stack
+ * swap - swap location of prev stack with top stack
  * @h: node to be swapped
  * @line_number: node number
  */
@@ -30,8 +30,8 @@ void swap(stack_t **h, unsigned int line_number)
 	(*h) = temp;
 }
 /**
- * rotl - rotate so top of stack becomes last one
- * second becomes first one
+ * rotl - rotate top of stack to become last one
+ * and second become first one
  * @h: node to be rotated
  * @line_number: node number
  */
@@ -54,7 +54,7 @@ void rotl(stack_t **h, unsigned int line_number)
 	}
 }
 /**
- * rotr - rotate only bottom node of stack becomes 1st one
+ * rotr - rotate so only bottom node of stack becomes first one
  * @h: node to be rotated
  * @line_number: node number
  */

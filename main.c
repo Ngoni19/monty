@@ -1,17 +1,17 @@
 #include "monty.h"
 
 /**
- * main - entry into the interpreter
+ * main - entry into the monty
  * @argc: argc counter
  * @argv: arguments
  * Return: 0 on success
  */
 int main(int argc, char *argv[])
 {
+	char *buff, *token;
 	int fds, is_p = 0;
 	unsigned int line = 1;
-	ssize_t n_read;
-	char *buffer, *token;
+	ssize_t f_read;
 	stack_t *h = NULL;
 
 	if (argc != 2)
@@ -25,17 +25,17 @@ int main(int argc, char *argv[])
 		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	buffer = malloc(sizeof(char) * 10000);
-	if (!buffer)
+	buff = malloc(sizeof(char) * 10000);
+	if (!buff)
 		return (0);
-	n_read = read(fds, buffer, 10000);
-	if (n_read == -1)
+	f_read = read(fds, buff, 10000);
+	if (f_read == -1)
 	{
-		free(buffer);
+		free(buff);
 		close(fds);
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(buffer, "\n\t\a\r ;:");
+	token = strtok(buff, "\n\t\a\r ;:");
 	while (token != NULL)
 	{
 		if (is_p == 1)
@@ -69,8 +69,7 @@ int main(int argc, char *argv[])
 		token = strtok(NULL, "\n\t\a\r ;:");
 	}
 	free_dlist(&h);
-	free(buffer);
+	free(buff);
 	close(fds);
 	return (0);
 }
-

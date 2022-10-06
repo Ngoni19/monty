@@ -8,8 +8,9 @@
 void (*get_op_fun(char *token1))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruction_s[] = {
-		{"pop", pop},
 		{"pall", pall},
+		{"pop", pop},
+		{"nop", nop},
 		{"pint", pint},
 		{"swap", swap},
 		{"add", _add},
@@ -19,7 +20,6 @@ void (*get_op_fun(char *token1))(stack_t **stack, unsigned int line_number)
 		{"mod", _mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
-		{"nop", nop},
 		{"rotl", rotl},
 		{"rotr", rotr},
 		{NULL, NULL}
